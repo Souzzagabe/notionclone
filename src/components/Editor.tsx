@@ -8,6 +8,7 @@ import {
   RxStrikethrough,
   RxCode,
 } from "react-icons/rx";
+import BubbleButton from "./BubbleButton";
 
 export function Editor() {
   const editor = useEditor({
@@ -31,18 +32,18 @@ export function Editor() {
           className="bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600"
           editor={editor}
         >
-          <button className="p-2 text-zinc-200 text-sm items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-            <RxFontBold className="w-4 h-4"/>
-          </button>
-          <button className="p-2 text-zinc-200 text-sm items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxFontItalic className="w-4 h-4"/>
-          </button>
-          <button className="p-2 text-zinc-200 text-sm items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxStrikethrough className="w-4 h-4"/>
-          </button>
-          <button className="p-2 text-zinc-200 text-sm items-center gap-1.5 font-medium leading-none hover:text-zinc-50 hover:bg-zinc-600">
-          <RxCode className="w-4 h-4"/>
-          </button>
+          <BubbleButton>
+            <RxFontBold className="w-4 h-4" />
+          </BubbleButton>
+          <BubbleButton>
+            <RxFontItalic className="w-4 h-4" />
+          </BubbleButton>
+          <BubbleButton>
+            <RxStrikethrough className="w-4 h-4" />
+          </BubbleButton>
+          <BubbleButton>
+            <RxCode className="w-4 h-4" />
+          </BubbleButton>
         </BubbleMenu>
       )}
     </>
