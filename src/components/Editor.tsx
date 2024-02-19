@@ -11,7 +11,6 @@ import {
   RxChatBubble,
 } from "react-icons/rx";
 import BubbleButton from "./BubbleButton";
-import FloatingMenu from "@tiptap/extension-floating-menu";
 
 export function Editor() {
   const editor = useEditor({
@@ -32,7 +31,8 @@ export function Editor() {
       />
       {editor && (
         <BubbleMenu
-          className=" bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600"
+          className=" bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden 
+          flex divide-x divide-zinc-600"
           editor={editor}
         >
           <BubbleButton>
