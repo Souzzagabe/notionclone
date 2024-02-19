@@ -5,7 +5,7 @@ function App() {
     <div className="min-h-screen text-zinc-900 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-8">
       <div
         className="bg-white w-[1100px] mx-auto rounded-xl min-h-[720px] shadow-sm border border-black/20
-      overflow-hidden grid cols-cols-[16rem_fr]"
+      overflow-hidden grid grid-cols-[16rem_1fr]"
       >
         <aside className="bg-zinc-200 border-r border-r-zinc-100 p-4">
           <div className="flex gap-2 group">

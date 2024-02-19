@@ -7,8 +7,11 @@ import {
   RxFontItalic,
   RxStrikethrough,
   RxCode,
+  RxChevronDown,
+  RxChatBubble,
 } from "react-icons/rx";
 import BubbleButton from "./BubbleButton";
+import FloatingMenu from "@tiptap/extension-floating-menu";
 
 export function Editor() {
   const editor = useEditor({
@@ -29,21 +32,43 @@ export function Editor() {
       />
       {editor && (
         <BubbleMenu
-          className="bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600"
+          className=" bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex divide-x divide-zinc-600"
           editor={editor}
         >
           <BubbleButton>
-            <RxFontBold className="w-4 h-4" />
+            Text
+            <RxChevronDown className="" />
           </BubbleButton>
           <BubbleButton>
-            <RxFontItalic className="w-4 h-4" />
+            Comment
+            <RxChatBubble className="" />
           </BubbleButton>
-          <BubbleButton>
-            <RxStrikethrough className="w-4 h-4" />
-          </BubbleButton>
-          <BubbleButton>
-            <RxCode className="w-4 h-4" />
-          </BubbleButton>
+          <div className="flex items-center">
+            <BubbleButton
+              onClick={() => editor.chain().focus().toggleBold().run()}
+              data-active={editor.isActive("bold")}
+            >
+              <RxFontBold className="w-4 h-4" />
+            </BubbleButton>
+            <BubbleButton
+              onClick={() => editor.chain().focus().toggleItalic().run()}
+              data-active={editor.isActive("italic")}
+            >
+              <RxFontItalic className="w-4 h-4" />
+            </BubbleButton>
+            <BubbleButton
+              onClick={() => editor.chain().focus().toggleStrike().run()}
+              data-active={editor.isActive("strike")}
+            >
+              <RxStrikethrough className="w-4 h-4" />
+            </BubbleButton>
+            <BubbleButton
+              onClick={() => editor.chain().focus().toggleCode().run()}
+              data-active={editor.isActive("code")}
+            >
+              <RxCode className="w-4 h-4" />
+            </BubbleButton>
+          </div>
         </BubbleMenu>
       )}
     </>
